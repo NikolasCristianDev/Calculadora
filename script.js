@@ -7,11 +7,12 @@ const display = document.getElementById('display');
     function clearDisplay() {
         display.value = "";
     }
+    function clearDisplay2() {
+        display.value -= display.value.slice(0, -1);
+    }
 
     function calculate() {
         try {
-            // eval() processa a string matemática. 
-            // Em projetos complexos, usa-se um parser próprio por segurança.
             display.value = eval(display.value);
         } catch (error) {
             display.value = "Erro";
